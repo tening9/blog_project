@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mon Blog</title>
+    <link rel="stylesheet" href="{% static 'articles/style.css' %}">
+
+    {% load static %}
+<link rel="stylesheet" href="{% static 'articles/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Mon Blog Django</h1>
+        <hr>
+    </header>
+
+    <main>
+  
+        {% block content %}
+        {% endblock %}            
+
+    </main>
+</body>
+</html>

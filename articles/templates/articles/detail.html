@@ -1,0 +1,14 @@
+{% extends 'articles/base.html' %}
+
+{% block content %}
+
+<h2>{{ object.titre }}</h2>
+{% if object.image %}
+    <img src="{{ object.image.url }}" width="200">
+{% endif %}
+
+<p>{{ object.contenu }}</p>
+
+<a href="/">Retour</a>
+
+{% endblock %}

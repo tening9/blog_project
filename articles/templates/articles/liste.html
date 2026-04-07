@@ -1,0 +1,24 @@
+{% extends 'articles/base.html' %}
+
+{% block content %}
+<a href="{% url 'creer_article' %}">Nouvel article</a>
+
+<h1>Liste des articles</h1>
+
+{% for article in articles %}
+<div>
+        <h2>{{ article.titre }}</h2>
+        
+        {% if article.image %}
+            <img src="{{ article.image.url }}" width="200">
+        {% endif %}
+
+        <p>{{ article.contenu|truncatewords:20 }}</p>
+         <a href="{% url 'detail_article' article.pk %}">Lire plus</a>
+        <a href="{% url 'modifier_article' article.pk %}">Modifier</a> 
+        <a href="{% url 'supprimer_article' article.pk %}">Supprimer</a>
+        <hr>
+    </div>
+{% endfor %}
+
+{% endblock %}
